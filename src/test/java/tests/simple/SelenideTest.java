@@ -31,6 +31,7 @@ public class SelenideTest {
     public void testGitIgnoreSearchFailed(){
 
         open("https://github.com/");
+
         $(".header-search-button").click();
         $("#query-builder-test").sendKeys("eroshenkoam/allure-example");
         $("#query-builder-test").submit();

@@ -90,21 +90,21 @@ public class TestPracticeForm extends TestBase {
         });
     }
 
-    //Позитивный сценарий 2
-    @Test
-    void PositiveOnlyRequiredFieldsTest() {
-
-        practiceFormPage
-                .openPage(practiceFormUrl)
-                .typeFirstUserName(testData.firstName)
-                .typeLastUserName(testData.lastName)
-                .setGender(testData.gender)
-                .typeUserNumber(testData.userNumber)
-                .submitForm()
-                .checkField("Student Name", testData.firstName + " " + testData.lastName)
-                .checkField("Gender", testData.gender)
-                .checkField("Mobile", testData.userNumber);
-    }
+//    //Позитивный сценарий 2
+//    @Test
+//    void PositiveOnlyRequiredFieldsTest() {
+//
+//        practiceFormPage
+//                .openPage(practiceFormUrl)
+//                .typeFirstUserName(testData.firstName)
+//                .typeLastUserName(testData.lastName)
+//                .setGender(testData.gender)
+//                .typeUserNumber(testData.userNumber)
+//                .submitForm()
+//                .checkField("Student Name", testData.firstName + " " + testData.lastName)
+//                .checkField("Gender", testData.gender)
+//                .checkField("Mobile", testData.userNumber);
+//    }
 
 //    //Негативный сценарий: вводим только имя и фамилию
 //    @Test

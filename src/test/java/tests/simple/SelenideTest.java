@@ -19,10 +19,10 @@ public class SelenideTest {
     static void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = "1920x1080";
-//        Configuration.browser = "chrome";
+        Configuration.browser = "chrome";
 //        Configuration.browserVersion = "128.0";
 //        Configuration.browserVersion = "130.0";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 }
     @Test
     public void testGitIgnoreSearch(){

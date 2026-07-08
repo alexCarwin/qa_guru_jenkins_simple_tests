@@ -49,4 +49,8 @@ public class TestBase {
 
     }
 
+    @AfterEach
+    void tearDown() {
+        closeWebDriver();
+    }
 }

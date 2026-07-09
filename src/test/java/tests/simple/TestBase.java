@@ -24,10 +24,10 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = System.getProperty("browserSize");//"1920x1080";
         Configuration.browser = System.getProperty("browser");
-        Configuration.baseUrl = System.getProperty("base_url"); //"https://demoqa.com";
-        Configuration.browserVersion=System.getProperty("browser_version");
+        Configuration.baseUrl = System.getProperty("baseUrl"); //"https://demoqa.com";
+        Configuration.browserVersion=System.getProperty("browserVersion");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
                 "enableVNC", true,

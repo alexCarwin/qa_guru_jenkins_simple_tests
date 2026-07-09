@@ -25,9 +25,9 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
-        Configuration.browser = System.getProperty("BROWSER");
-        Configuration.baseUrl = System.getProperty("BASE_URL"); //"https://demoqa.com";
-
+        Configuration.browser = System.getProperty("browser");
+        Configuration.baseUrl = System.getProperty("base_url"); //"https://demoqa.com";
+        Configuration.browserVersion=System.getProperty("browser_version");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
                 "enableVNC", true,
@@ -35,7 +35,7 @@ public class TestBase {
         ));
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("REMOTE");//"https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("remote");//"https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
     }
 

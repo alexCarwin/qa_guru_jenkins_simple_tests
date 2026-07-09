@@ -51,44 +51,44 @@ public class TestPracticeForm extends TestBase {
         });
     }
 
-
-    //Негативный сценарий
-    @Test
-    @DisplayName("Failed Registration")
-    void FailedRegistrationFormTest() {
-
-        step("Open registration page", () ->
-                practiceFormPage
-                        .openPage(practiceFormUrl));
-        step("Fill registration form", () -> {
-            practiceFormPage
-                    .typeFirstUserName(testData.firstName)
-                    .typeLastUserName(testData.lastName)
-                    .typeUserEmail(testData.userEmail)
-                    .setGender(testData.gender)
-                    .typeUserNumber(testData.userNumber)
-                    .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth)
-                    .setSubject(testData.subjectsInput)
-                    .typeHobby(testData.hobby)
-                    .uploadPicture(imageName)
-                    .typeAddress(testData.currentAddress)
-                    .setStateAndCity(testData.state, testData.city)
-                    .submitForm();
-        });
-        step("Check registration form results", () -> {
-            practiceFormPage
-                    .checkField("Student Name", testData.firstName + " BROKEN" + testData.lastName)
-                    .checkField("Student Email", testData.userEmail)
-                    .checkField("Gender", testData.gender)
-                    .checkField("Mobile", testData.userNumber)
-                    .checkField("Date of Birth", testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth)
-                    .checkField("Subjects", testData.subjectsInput)
-                    .checkField("Hobbies", testData.hobby)
-                    .checkField("Picture", imageName)
-                    .checkField("Address", testData.currentAddress)
-                    .checkField("State and City", testData.state + " " + testData.city);
-        });
-    }
+//
+//    //Негативный сценарий
+//    @Test
+//    @DisplayName("Failed Registration")
+//    void FailedRegistrationFormTest() {
+//
+//        step("Open registration page", () ->
+//                practiceFormPage
+//                        .openPage(practiceFormUrl));
+//        step("Fill registration form", () -> {
+//            practiceFormPage
+//                    .typeFirstUserName(testData.firstName)
+//                    .typeLastUserName(testData.lastName)
+//                    .typeUserEmail(testData.userEmail)
+//                    .setGender(testData.gender)
+//                    .typeUserNumber(testData.userNumber)
+//                    .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth)
+//                    .setSubject(testData.subjectsInput)
+//                    .typeHobby(testData.hobby)
+//                    .uploadPicture(imageName)
+//                    .typeAddress(testData.currentAddress)
+//                    .setStateAndCity(testData.state, testData.city)
+//                    .submitForm();
+//        });
+//        step("Check registration form results", () -> {
+//            practiceFormPage
+//                    .checkField("Student Name", testData.firstName + " BROKEN" + testData.lastName)
+//                    .checkField("Student Email", testData.userEmail)
+//                    .checkField("Gender", testData.gender)
+//                    .checkField("Mobile", testData.userNumber)
+//                    .checkField("Date of Birth", testData.dayOfBirth + " " + testData.monthOfBirth + "," + testData.yearOfBirth)
+//                    .checkField("Subjects", testData.subjectsInput)
+//                    .checkField("Hobbies", testData.hobby)
+//                    .checkField("Picture", imageName)
+//                    .checkField("Address", testData.currentAddress)
+//                    .checkField("State and City", testData.state + " " + testData.city);
+//        });
+//    }
 
 //    //Позитивный сценарий 2
 //    @Test

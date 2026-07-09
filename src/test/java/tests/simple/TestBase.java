@@ -25,8 +25,8 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
-        Configuration.browser = "chrome";
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browser = System.getProperty("BROWSER");
+        Configuration.baseUrl = System.getProperty("BASE_URL"); //"https://demoqa.com";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
@@ -35,7 +35,7 @@ public class TestBase {
         ));
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("REMOTE");//"https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
     }
 
